@@ -461,6 +461,7 @@ subroutine ocpl_roms_import()
                udepth = 0.0_R8
                vdepth = 0.0_R8
                do n=1,nlev_r !--- vertical integration ---
+                  !dz = (ROMS_GRID(nestID)%Hz(iu,ju,n) + ROMS_GRID(nestID)%Hz(iu-1,ju,n) )/2.0_R8 
                   dz = (ROMS_GRID(nestID)%Hz(iu,ju,n) + ROMS_GRID(nestID)%Hz(iu-1,ju,n) )/2.0_R8 
                   ubar   = ubar   + dz*p2x_3d_rc(k,n)%rAttr(k_p2x_3d_So_uvel,ij)
                   udepth = udepth + dz
